@@ -1,0 +1,51 @@
+@import './../../../scss/constants.scss';
+
+.radioWrapper {
+    display: flex;
+    column-gap: 108px;
+}
+
+.radioInner {
+    display: none;
+}
+
+.radio {
+    display: flex;
+}
+
+.radio:hover {
+    cursor: pointer;
+    
+    .radioOuter {
+        border-color: $color--primary-light;
+    }
+}
+
+.radioOuter {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    min-height: 16px;
+    border-radius: 50%;
+    border: 1px solid $color--gray;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.checked {
+        border-color: $color--primary;
+
+        .radioInner {
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $color--primary;
+        }
+    }
+}
+
+.label {
+    margin-left: 8px;
+}

@@ -1,0 +1,81 @@
+@import './../../../scss/constants.scss';
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $is-desktop) {
+        width: 256px;
+    }
+}
+
+.loader {
+    border-radius: $border-radius;
+    background-color: $color--gray-extra-light;
+    border: 1px dashed $color--gray;
+    margin: 2px 0;
+    padding: 8px 12px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    color: $color--gray-extra-dark;
+    
+    .startIcon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding: 12px;
+        font-size: 28px;
+        line-height: 16px;
+        color: $color--gray-darker;
+    }
+}
+
+.error {
+    color: $color--error;
+}
+
+.filename {
+    color: $color--primary;
+    margin-left: 10px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.file {
+    display: flex;
+    align-items: center;
+    padding: 0 7px;
+
+    &:hover {
+        background-color: $color--primary-extra-light;
+
+        .close {
+            display: block;
+        }
+    }
+}
+
+.close {
+    display: none;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.label {
+    display: flex;
+    width: calc(100% - 20px);
+    cursor: pointer;
+    align-items: center;
+}
+
+.clip {
+    width: 12px;
+    height: 22px;
+    min-width: 12px;
+    min-height: 22px;
+    display: flex;
+}

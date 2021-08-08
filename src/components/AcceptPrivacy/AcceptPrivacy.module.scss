@@ -1,0 +1,20 @@
+@import './../../scss/constants.scss';
+
+.link {
+    color: $color--primary;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    margin-left: 8px;
+
+    > span {
+        white-space: nowrap;
+    }
+}
+
+.text {
+    margin: 0;
+}

@@ -1,0 +1,22 @@
+@import './../../scss/constants.scss';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+}
+
+.modal {
+    width: 100%;
+    text-align: center;
+
+    @media screen and (min-width: $is-desktop) {
+        width: 547px;
+    }
+}
+
+.upload {
+    @media screen and (min-width: $is-desktop) {
+        margin-top: 24px;
+    }
+}

@@ -1,3 +1,139 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "extends": [
+    "eslint:recommended",
+    "react-app",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors",
+    "next",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": ["@typescript-eslint", "jsx-a11y", "react-hooks", "import"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    // disable error of parsing options for *.stories.js to enable eslint itself
+    "createDefaultProgram": true,
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "globals": {},
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    // async/await error prone methods
+    "no-return-await": "error",
+    "require-atomic-updates": "error",
+    // error prone methods,
+    "no-debugger":"off",
+    "prefer-const": "error",
+    "no-else-return": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-redeclare": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "max-classes-per-file": "error",
+    "no-template-curly-in-string": "warn",
+    // imports
+    "import/order": "warn",
+    "import/newline-after-import": "warn",
+    "no-duplicate-imports": "error",
+    "import/no-unresolved": "error",
+    // cosmetic
+    "id-length": [
+      "warn",
+      { "min": 3, "exceptions": ["id", "to", "me", "a", "b", "fs"] }
+    ],
+    "prettier/prettier": "off",
+    "linebreak-style": ["off", "unix"],
+    "comma-dangle": ["warn", "always-multiline"],
+    "quotes": ["warn", "single"],
+    "dot-notation": "warn",
+    "no-multi-spaces": "warn",
+    "no-mixed-spaces-and-tabs": ["warn", "smart-tabs"],
+    "no-useless-return": "warn",
+    "padding-line-between-statements": [
+      "warn",
+      { "blankLine": "always", "prev": "function", "next": "*" },
+      { "blankLine": "always", "prev": "export", "next": "*" },
+      { "blankLine": "always", "prev": "if", "next": "*" },
+      { "blankLine": "always", "prev": "block-like", "next": "*" },
+      { "blankLine": "always", "prev": "multiline-const", "next": "*" },
+      { "blankLine": "always", "prev": "multiline-expression", "next": "*" }
+    ],
+    // prod related
+    "no-console": "warn",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    // typescript
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "Number": {
+            "message": "Use number instead",
+            "fixWith": "number"
+          },
+          "String": {
+            "message": "Use string instead",
+            "fixWith": "string"
+          },
+          "Boolean": {
+            "message": "Use boolean instead",
+            "fixWith": "boolean"
+          },
+          "Symbol": {
+            "message": "Use symbol instead",
+            "fixWith": "symbol"
+          },
+          "Object": {
+            "message": "Use object instead",
+            "fixWith": "object"
+          }
+        }
+      }
+    ],
+    "@typescript-eslint/explicit-member-accessibility": "error",
+    "@typescript-eslint/no-extraneous-class": [
+      "error",
+      {
+        "allowConstructorOnly": true
+      }
+    ],
+    "@typescript-eslint/no-for-in-array": "error",
+    "@typescript-eslint/no-require-imports": "error",
+    "@typescript-eslint/no-unnecessary-qualifier": "error",
+    "@typescript-eslint/no-unnecessary-type-assertion": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-empty-interface": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["."],
+        "extensions": [".js", ".ts", ".d.ts"] // to support jsx https://github.com/benmosher/eslint-plugin-import/issues/869#issuecomment-320267555
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.js", "*.stories.ts", "*.stories.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "import/no-anonymous-default-export": "off",
+        "no-use-before-define": "off",
+        "no-console": "off"
+      }
+    }
+  ]
 }

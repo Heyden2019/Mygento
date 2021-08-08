@@ -1,0 +1,11 @@
+@import './../../scss/constants.scss';
+
+.container {
+    padding: 62px 16px 48px;
+    
+    @media screen and (min-width: $is-desktop) {
+        padding: 120px 16px 88px;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}

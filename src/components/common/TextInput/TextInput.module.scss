@@ -1,0 +1,38 @@
+@import './../../../scss/constants.scss';
+
+.container {
+    min-height: 88px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $is-desktop) {
+        width: 256px;
+    }
+}
+
+.input {
+    border-radius: $border-radius;
+    border: 1px solid $color--gray;
+    margin: 2px 0;
+    padding: 8px 12px;
+    height: 40px;
+
+    &:hover {
+        border-color: $color--primary-light;
+    }
+
+    &:focus,
+    &:active {
+        border-color: $color--primary-light;
+        box-shadow: 0px 0px 4px rgba(24, 144, 255, 0.502);
+    }
+
+    &.error {
+        border-color: $color--error;
+    }
+}
+
+.error {
+    color: $color--error;
+}

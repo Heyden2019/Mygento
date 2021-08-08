@@ -1,0 +1,15 @@
+@import './constants.scss';
+
+.scrollbar {
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color--gray-dark;
+    opacity: 0.7;
+    border-radius: 4px;
+  }
+}
