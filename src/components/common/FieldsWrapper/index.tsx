@@ -4,7 +4,7 @@ import styles from './FieldsWrapper.module.scss';
 
 interface FieldsWrapperProps {
   title?: string;
-  error?: string;
+  error?: string | boolean;
   isRequired?: boolean;
   className?: string;
 }

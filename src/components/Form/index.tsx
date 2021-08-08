@@ -31,8 +31,6 @@ export const Form: React.FC<FormProps> = ({ privacyPolicy }) => {
   const formik = useFormik({
     initialValues,
     validateOnBlur: true,
-    validateOnChange: true,
-    validateOnMount: true,
     isInitialValid: false,
     validationSchema,
     onSubmit: () => {
@@ -42,7 +40,6 @@ export const Form: React.FC<FormProps> = ({ privacyPolicy }) => {
 
   const onCloseModal = () => {
     formik.resetForm();
-    formik.validateForm();
     setShowModal(false);
   };
 
@@ -81,7 +78,11 @@ export const Form: React.FC<FormProps> = ({ privacyPolicy }) => {
           className={styles.upload}
         />
       </FieldsWrapper>
-      <FieldsWrapper title="Пол" isRequired>
+      <FieldsWrapper
+        title="Пол"
+        isRequired
+        error={formik.touched.sex && formik.errors.sex}
+      >
         <RadioGroup
           name="sex"
           values={sexValues}

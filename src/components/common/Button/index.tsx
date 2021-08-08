@@ -17,7 +17,6 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      disabled={disabled}
       onClick={onClick}
       className={clsx(className, styles.button, 'text-sm', {
         [styles.disabled]: disabled,
